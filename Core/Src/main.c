@@ -204,15 +204,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int state = 0;
-    while (1)
-    {
-    	if (state==0)
-    		setAllClock();
-    	else
-    		clearAllClock();
-    	state = (++state)%2;
-    	HAL_Delay(1000);
+  int counter = 0;
+
+  while (1) {
+     if (counter>=12) {
+    	 counter=0;
+    	 clearAllClock();
+     }
+     setNumberOnClock(counter);
+     counter++;
+     HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
