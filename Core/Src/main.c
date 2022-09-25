@@ -205,13 +205,13 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int counter = 0;
-
+  setAllClock();
   while (1) {
      if (counter>=12) {
     	 counter=0;
-    	 clearAllClock();
+    	 setAllClock();
      }
-     setNumberOnClock(counter);
+     clearNumberOnClock(counter);
      counter++;
      HAL_Delay(100);
     /* USER CODE END WHILE */
